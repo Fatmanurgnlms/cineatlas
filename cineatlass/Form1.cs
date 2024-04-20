@@ -8,8 +8,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace cineatlass
-{
+  namespace cineatlass
+  {
+      public partial class Form1 : Form
+      {
+          private SQLiteConnection connection;
+          private string connectionString = "Data Source=cineatlass.db;Version=3;";
+
+          public Form1()
+          {
+              InitializeComponent();
+              InitializeDatabase(); // Veritabanı bağlantısını başlat
+          }
+
+          private void InitializeDatabase()
+          {
+              // Veritabanı bağlantısını başlat
+              connection = new SQLiteConnection(connectionString);
+              connection.Open();
+
+              // Tablo oluşturma işlemini burada gerçekleştirin
+              string createFilmTableQuery = "CREATE TABLE IF NOT EXISTS Film (Id INTEGER PRIMARY KEY, Ad TEXT, SeansSaatleri TEXT)";
+              using (SQLiteCommand command = new SQLiteCommand(createFilmTableQuery, connection))
+              {
+                  command.ExecuteNonQuery();
+              }
+
+              string createSalonTableQuery = "CREATE TABLE IF NOT EXISTS Salon (Id INTEGER PRIMARY KEY, Ad TEXT, KoltukKapasitesi INTEGER)";
+              using (SQLiteCommand command = new SQLiteCommand(createSalonTableQuery, connection))
+              {
+                  command.ExecuteNonQuery();
+              }
+
+              // Diğer tabloları oluşturmak için benzer şekilde devam edebilirsiniz
+          }
+
+          protected override void Dispose(bool disposing)
+          {
+              if (disposing)
+              {
+                  // Form kapatıldığında veritabanı bağlantısını kapat
+                  if (connection != null)
+                  {
+                      connection.Close();
+                  }
+              }
+              base.Dispose(disposing);
+          }
+      }
+  }
     public partial class Form1 : Form
     {
         public Form1()
