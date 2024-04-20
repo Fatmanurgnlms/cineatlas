@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cineatlass", "cineatlass\cineatlass.csproj", "{EABEBB2E-8ABD-4545-9ADA-7F5ECFDCD2CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EABEBB2E-8ABD-4545-9ADA-7F5ECFDCD2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EABEBB2E-8ABD-4545-9ADA-7F5ECFDCD2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EABEBB2E-8ABD-4545-9ADA-7F5ECFDCD2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EABEBB2E-8ABD-4545-9ADA-7F5ECFDCD2CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D21C47A-0C86-4275-9E1C-6F65C2A933A6}
+	EndGlobalSection
+EndGlobal
